@@ -1,0 +1,160 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC,
+    Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  position: relative;
+  color: #666;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse !important;
+}
+
+#__nuxt {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#__layout {
+  height: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+*:not(input) {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+/* flex 工具 */
+
+.f-h {
+  display: flex;
+  flex-direction: row;
+}
+
+.f-v {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-hc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.f-vc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.f-cc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-vcc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-bc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#heartMain {
+  display: block;
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.heartMain {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.heartCostume {
+  display: block;
+  position: absolute;
+  width: 26%;
+  height: 42vw;
+  top: 8vw;
+  z-index: 20;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

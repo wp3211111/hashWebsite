@@ -1,0 +1,48 @@
+<script>
+function Uint8ArrayToString(fileData){
+    var dataString = "";
+        for (var i = 0; i < fileData.length; i++) {
+            dataString += String.fromCharCode(fileData[i]);
+        }
+        return dataString
+}
+
+fetch('https://novel-content.cdn.bcebos.com/6742163404127555724')
+.then(response => response.body)
+.then(rb => {
+  const reader = rb.getReader();
+
+  return new ReadableStream({
+    start(controller) {
+      // The following function handles each data chunk
+      function push() {
+        // "done" is a Boolean and value a "Uint8Array"
+        reader.read().then( ({done, value}) => {
+          // If there is no more data to read
+          if (done) {
+            console.log('done', done);
+            controller.close();
+            return;
+          }
+          // Get the data and send it to the browser via the controller
+          const strValue = Uint8ArrayToString(value);
+          console.log("strValue",strValue)
+          // Check chunks by logging to the console
+          console.log(done, value);
+          push();
+        })
+      }
+
+      push();
+    }
+  });
+})
+.then(stream => {
+  // Respond with our stream
+  return new Response(stream, { headers: { "Content-Type": "application/octet-stream" } }).text();
+})
+.then(result => {
+  // Do things with result
+  console.log(result);
+});
+</script>
